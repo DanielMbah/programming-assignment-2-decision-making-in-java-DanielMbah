@@ -1,0 +1,245 @@
+// SmartUtilityCalculator.java
+
+// Author: Asi Mbah
+
+// Purpose: Practice decision-making in Java using if, else-if, and switch statements
+
+// Date: 11/11/25
+
+
+
+import java.util.Scanner;
+
+
+
+public class SmartUtilityCalculator {
+
+
+
+  public static void main(String[] args) {
+
+    Scanner input = new Scanner(System.in);
+
+    int choice;
+
+
+
+    // Display menu
+
+    System.out.println("==== Smart Utility Calculator ====");
+
+    System.out.println("1. Check if a number is Even or Odd");
+
+    System.out.println("2. Find the largest of three numbers");
+
+    System.out.println("3. Grade Calculator");
+
+    System.out.println("4. Simple Calculator (+, -, *, /)");
+
+    System.out.println("5. Exit");
+
+    System.out.print("Enter your choice: ");
+
+    choice = input.nextInt();
+
+
+
+    switch (choice) {
+
+      case 1:
+
+        // Case 1: Even or Odd
+
+        System.out.print("Enter an integer: ");
+
+        int n = input.nextInt();
+
+        if (n % 2 == 0)
+
+          System.out.println("The number is Even.");
+
+        else
+
+          System.out.println("The number is Odd.");
+
+        break;
+
+
+
+      case 2:
+
+        // Case 2: Largest of three numbers
+
+        System.out.print("Enter first number: ");
+
+        int a = input.nextInt();
+
+        System.out.print("Enter second number: ");
+
+        int b = input.nextInt();
+
+        System.out.print("Enter third number: ");
+
+        int c = input.nextInt();
+
+
+
+        int largest;
+
+        if (a >= b) {
+
+          if (a >= c)
+
+            largest = a;
+
+          else
+
+            largest = c;
+
+        } else {
+
+          if (b >= c)
+
+            largest = b;
+
+          else
+
+            largest = c;
+
+        }
+
+        System.out.println("The largest number is: " + largest);
+
+        break;
+
+
+
+      case 3:
+
+        // Case 3: Grade Calculator
+
+        System.out.print("Enter your score (0 - 100): ");
+
+        int score = input.nextInt();
+
+
+
+        if (score < 0 || score > 100) {
+
+          System.out.println("Invalid score. Please enter a value between 0 and 100.");
+
+        } else if (score >= 90) {
+
+          System.out.println("Grade: A");
+
+        } else if (score >= 80) {
+
+          System.out.println("Grade: B");
+
+        } else if (score >= 70) {
+
+          System.out.println("Grade: C");
+
+        } else if (score >= 60) {
+
+          System.out.println("Grade: D");
+
+        } else {
+
+          System.out.println("Grade: F");
+
+        }
+
+        break;
+
+
+
+      case 4:
+
+        // Case 4: Simple Calculator
+
+        System.out.print("Enter first number: ");
+
+        double num1 = input.nextDouble();
+
+        System.out.print("Enter second number: ");
+
+        double num2 = input.nextDouble();
+
+        System.out.print("Enter operator (+, -, *, /): ");
+
+        char op = input.next().charAt(0);
+
+
+
+        switch (op) {
+
+          case '+':
+
+            System.out.println("Result: " + (num1 + num2));
+
+            break;
+
+          case '-':
+
+            System.out.println("Result: " + (num1 - num2));
+
+            break;
+
+          case '*':
+
+            System.out.println("Result: " + (num1 * num2));
+
+            break;
+
+          case '/':
+
+            if (num2 == 0)
+
+              System.out.println("Error: Division by zero is not allowed.");
+
+            else
+
+              System.out.println("Result: " + (num1 / num2));
+
+            break;
+
+          default:
+
+            System.out.println("Invalid operator.");
+
+            break;
+
+        }
+
+        break;
+
+
+
+      case 5:
+
+        // Case 5: Exit
+
+        System.out.println("Goodbye!");
+
+        break;
+
+
+
+      default:
+
+        // Invalid choice
+
+        System.out.println("Invalid menu option.");
+
+        break;
+
+    }
+
+
+
+    input.close();
+
+  }
+
+}
